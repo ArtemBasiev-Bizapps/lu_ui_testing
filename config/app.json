@@ -1,0 +1,6 @@
+{
+  "host": "https://uatliveultimatereplicated.azurewebsites.net",
+  "timeout": 1000,
+  "bigtimeout": 5000,
+  "testCardNumber": "9696969696969696"
+}
