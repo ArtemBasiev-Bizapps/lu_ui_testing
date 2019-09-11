@@ -108,7 +108,7 @@ module.exports = {
   "Checkout as a guest with delivery and billing address should pass": function(browser) {
     browser
      .click(checkout.btnAddToCart);
-     
+
      methods.moveToCart(browser);
 
     browser
@@ -289,7 +289,7 @@ module.exports = {
      .assert.urlContains('store/thank-you');
   },
 
-  "Checkout with account with picking up and billing address should pass": function(browser) {
+  "Checkout AutoOrder with picking up and billing address should pass": function(browser) {
     browser
     .click(checkout.btnSubscribe);
 
