@@ -1,4 +1,3 @@
-const uuidv1 = require('uuid/v1');
 const { getConfig } = require('../../config');
 const enrollment = require('../../page-objects/enrollment');
 

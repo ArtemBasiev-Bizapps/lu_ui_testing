@@ -1,6 +1,9 @@
 {
-  "host": "https://uatliveultimatereplicated.azurewebsites.net",
+  "host": "http://localhost",
+  "productUrl": "http://localhost/corporate/store/product/LU3177",
   "timeout": 1000,
-  "bigtimeout": 5000,
-  "testCardNumber": "9696969696969696"
+  "bigtimeout": 8000,
+  "testCardNumber": "9696969696969696",
+  "testCustomerLoginName": "test",
+  "testCustomerPassword": "test"
 }
