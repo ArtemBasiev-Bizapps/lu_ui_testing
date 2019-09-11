@@ -5,5 +5,6 @@
   "bigtimeout": 8000,
   "testCardNumber": "9696969696969696",
   "testCustomerLoginName": "test",
-  "testCustomerPassword": "test"
+  "testCustomerPassword": "test",
+  "testEnrollerName": "test"
 }

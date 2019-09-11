@@ -92,5 +92,11 @@
         "packsPageLink": "a[href ='/corporate/enrollment/packs']",
         "btnJoin": "#SubmitConfigurationBtn",
         "btnContinue": "a[href='/corporate/enrollment/checkout']",
-        "btnAddBasicKit": "section[data-itemcode='Basickit'] .btn"
+        "btnAddBasicKit": "section[data-itemcode='Basickit'] .btn",
+        "btnChooseEnroller": "#enroller-search",
+        "enrollerSearchField": "#search-field",
+        "btnSearchEnroller": "a[data-role='search']",
+        "btnUseDestributor": ".enroller-list  .well:first-child  a[data-role='use-distributor']"
+
+
     }
