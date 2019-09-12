@@ -94,7 +94,7 @@ module.exports = {
 
   beforeEach: function(browser) {
     browser
-    .url(getConfig().productUrl)
+    .url(getConfig().host+getConfig().productRelativeUrl)
     .waitForElementPresent('body', getConfig().timeout)
   },
 

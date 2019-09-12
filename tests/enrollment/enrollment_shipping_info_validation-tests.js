@@ -1,4 +1,3 @@
-const uuidv1 = require('uuid/v1');
 const { getConfig } = require('../../config');
 const enrollment = require('../../page-objects/enrollment');
 
@@ -6,7 +5,7 @@ module.exports = {
   '@tags': ['enrollment', 'enrollment-validation'],
   before: function(browser) {
     browser
-      .url(getConfig().host+"/corporate/enrollment")
+      .url(getConfig().host+getConfig().enrollmentRelativeUrl)
       .waitForElementPresent('body', getConfig().timeout)
       .click(enrollment.packsPageLink)
       .waitForElementPresent(enrollment.btnContinue, getConfig().timeout)

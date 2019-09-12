@@ -1,0 +1,15 @@
+{
+    "contactUsName": "#Name",
+    "spanContactUsName": "span[data-valmsg-for='Name']",
+    "contactUsNameError": "#Name-error",
+    "contactUsPhone": "#Phone",
+    "spanContactUsPhone": "span[data-valmsg-for='Phone']",
+    "contactUsPhoneError": "#Phone-error",
+    "contactUsEmail": "#Email",
+    "spanContactUsEmail": "span[data-valmsg-for='Email']",
+    "contactUsEmailError": "#Email-error",
+    "contactUsNotes": "#Notes",
+    "spanContactUsNotes": "span[data-valmsg-for='Notes']",
+    "contactUsNotesError": "#Notes-error",
+    "btnSubmitContactUs": "#btn-submitemailform"
+}

@@ -5,7 +5,7 @@ module.exports = {
   '@tags': ['enrollment'],
   beforeEach: function(browser) {
     browser
-      .url(getConfig().host+"/corporate/enrollment")
+      .url(getConfig().host+getConfig().enrollmentRelativeUrl)
       .waitForElementPresent('body', getConfig().timeout)
       .click(enrollment.packsPageLink)
       .pause(getConfig().timeout);

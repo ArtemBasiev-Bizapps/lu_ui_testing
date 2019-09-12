@@ -1,6 +1,8 @@
 {
   "host": "http://localhost",
-  "productUrl": "http://localhost/corporate/store/product/LU3177",
+  "productRelativeUrl": "/corporate/store/product/LU3177",
+  "enrollmentRelativeUrl": "/corporate/enrollment",
+  "contactUsRelativeUrl": "/corporate/home/contactus",
   "timeout": 1000,
   "bigtimeout": 8000,
   "testCardNumber": "9696969696969696",

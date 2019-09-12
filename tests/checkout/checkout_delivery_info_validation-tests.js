@@ -6,7 +6,7 @@ module.exports = {
 
   before: function(browser) {
     browser
-    .url(getConfig().productUrl)
+    .url(getConfig().host+getConfig().productRelativeUrl)
     .waitForElementPresent('body', getConfig().timeout)
     .click(checkout.btnAddToCart)
     .pause(getConfig().bigtimeout)
