@@ -93,10 +93,18 @@
         "btnJoin": "#SubmitConfigurationBtn",
         "btnContinue": "a[href='/corporate/enrollment/checkout']",
         "btnAddBasicKit": "section[data-itemcode='Basickit'] .btn",
+        "btnAddUltimateKit": "section[data-itemcode='LUpack1'] .btn",
         "btnChooseEnroller": "#enroller-search",
         "enrollerSearchField": "#search-field",
         "btnSearchEnroller": "a[data-role='search']",
-        "btnUseDestributor": ".enroller-list  .well:first-child  a[data-role='use-distributor']"
+        "btnUseDestributor": ".enroller-list  .well:first-child  a[data-role='use-distributor']",
+        "btnPrintInvoice": "a[onclick='window.print()']",
+        "radioPickup": "#ShipMethodID[value='11']",
+        "btnChangePropucts": "#view-orderreview a[href='/corporate/enrollment/productlist']",
+        "btnToPacks": "a[href='/corporate/enrollment/packs']",
+        "btnIncreaseProductCount": "div[data-itemcode='LU3085'] a[data-role='incrementquantity']",
+        "btnOrderItemsContinue": "a[href='/corporate/enrollment/checkout']"
+
 
 
     }

@@ -3,6 +3,8 @@
   "productRelativeUrl": "/corporate/store/product/LU3177",
   "enrollmentRelativeUrl": "/corporate/enrollment",
   "contactUsRelativeUrl": "/corporate/home/contactus",
+  "loginRelativeUrl": "/corporate/account/login",
+  "registerRelativeUrl": "/corporate/account/register",
   "timeout": 1000,
   "bigtimeout": 8000,
   "testCardNumber": "9696969696969696",

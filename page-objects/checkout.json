@@ -8,7 +8,15 @@
     "password": "#Password",
     "btnLogin": "#loginbutton",
     "btnContinueAutoOrder": "button[type='submit']",
-    
+    "btnChangeProduct": "#view-shoppingreview a[href='/corporate/store/cart']",
+    "btnChangeShippingAddress": "#view-shoppingreview a[href='/corporate/store/checkout/shipping']",
+    "btnIncreaseProductCount": ".spinner-btn-up",
+    "linkOrders": "a[href='/corporate/orders']",
+    "toastContainer": "#toast-container",
+    "btnUsePrimaryCard": "#form0 button[type='submit']",
+    "btnChangePaymentMethod": "#view-shoppingreview a[href='/corporate/store/checkout/payment']",
+    "radioLocalPickup": "#ShipMethodID[value='11']",
+
     "tabDelivery": "#delivery-option",
     "deliveryAddressFirstName": "#address_FirstName",
     "spanDeliveryAddressFirstName": "span[data-valmsg-for='address.FirstName']",
@@ -44,8 +52,6 @@
     "spanPickUpEmail": "span[data-valmsg-for='Address.Email']",
     "pickUpEmailError": "#Address_Email-error",
     "btnPickUp": "#pickup",
-
-
 
     "nameOnCard": "#NameOnCard",
     "spanNameOnCard": "span[data-valmsg-for='NameOnCard']",

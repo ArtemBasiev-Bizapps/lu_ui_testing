@@ -1,9 +1,10 @@
 const { getConfig } = require('../../config');
 const checkout = require('../../page-objects/checkout');
+const account = require('../../page-objects/account');
 const methods = {
     fillBillingAddress: function(browser) {
         browser    
-        .waitForElementPresent(checkout.billingAddress, getConfig().timeout)
+        .waitForElementPresent(checkout.billingAddress, getConfig().bigtimeout)
         .pause(getConfig().timeout)
         .clearValue(checkout.billingAddress)
         .setValue(checkout.billingAddress, "test")
@@ -16,7 +17,7 @@ const methods = {
     },
     fillDeliveryInfo: function(browser) {
         browser    
-        .waitForElementPresent(checkout.tabDelivery, getConfig().timeout)
+        .waitForElementPresent(checkout.tabDelivery, getConfig().bigtimeout)
         .click(checkout.tabDelivery)
         .waitForElementPresent(checkout.deliveryAddressFirstName, getConfig().timeout)
         .clearValue(checkout.deliveryAddressFirstName)
@@ -44,7 +45,7 @@ const methods = {
     },
     fillPickUpInfo: function(browser) {
         browser    
-        .waitForElementPresent(checkout.tabPickUp, getConfig().timeout)
+        .waitForElementPresent(checkout.tabPickUp, getConfig().bigtimeout)
         .click(checkout.tabPickUp)
         .waitForElementPresent(checkout.pickUpFirstName, getConfig().timeout)
         .clearValue(checkout.pickUpFirstName)
@@ -61,7 +62,7 @@ const methods = {
     fillPaymentMethodInfo: function(browser) {
         browser 
         .pause(getConfig().timeout)
-        .waitForElementPresent(checkout.nameOnCard, getConfig().timeout)
+        .waitForElementPresent(checkout.nameOnCard, getConfig().bigtimeout)
         .clearValue(checkout.nameOnCard)
         .setValue(checkout.nameOnCard, "11111")
         .waitForElementPresent(checkout.cardNumber, getConfig().timeout)
@@ -70,7 +71,7 @@ const methods = {
     },
     signIn: function(browser) {
       browser 
-      .waitForElementPresent(checkout.loginName, getConfig().timeout)
+      .waitForElementPresent(checkout.loginName, getConfig().bigtimeout)
       .clearValue(checkout.loginName)
       .setValue(checkout.loginName, getConfig().testCustomerLoginName)
       .waitForElementPresent(checkout.password, getConfig().timeout)
@@ -79,9 +80,34 @@ const methods = {
       .waitForElementPresent(checkout.btnLogin, getConfig().timeout)
       .click(checkout.btnLogin);
   },
+  createAccount: function(browser) {
+    browser 
+    .waitForElementPresent(account.regCustomerFirstName, getConfig().bigtimeout)
+    .clearValue(account.regCustomerFirstName)
+    .setValue(account.regCustomerFirstName, "test")
+    .waitForElementPresent(account.regCustomerLastName, getConfig().bigtimeout)
+    .clearValue(account.regCustomerLastName)
+    .setValue(account.regCustomerLastName, "test")
+    .waitForElementPresent(account.regCustomerEmail, getConfig().bigtimeout)
+    .clearValue(account.regCustomerEmail)
+    .setValue(account.regCustomerEmail, "test@mail.com")
+    .waitForElementPresent(account.regCustomerLoginName, getConfig().bigtimeout)
+    .clearValue(account.regCustomerLoginName)
+    .setValue(account.regCustomerLoginName, Math.random().toString(36).substr(2, 15)+Math.random().toString(36).substr(2, 15))
+    .waitForElementPresent(account.regCustomerPassword, getConfig().bigtimeout)
+    .clearValue(account.regCustomerPassword)
+    .setValue(account.regCustomerPassword, "111")
+    .waitForElementPresent(account.regCustomerConfirmPassword, getConfig().bigtimeout)
+    .clearValue(account.regCustomerConfirmPassword)
+    .setValue(account.regCustomerConfirmPassword, "111")
+    .waitForElementPresent(account.btnSubmitRegistartion, getConfig().timeout)
+    .click(account.btnSubmitRegistartion);
+},
   moveToCart: function(browser) {
     browser 
-    .pause(getConfig().bigtimeout)
+    .pause(getConfig().timeout)
+    .waitForElementNotPresent(checkout.toastContainer, getConfig().bigtimeout)
+    .pause(getConfig().timeout)
     .click(checkout.linkCart)
     .waitForElementPresent(checkout.btnCheckout, getConfig().timeout)
     .click(checkout.btnCheckout);
@@ -129,7 +155,7 @@ module.exports = {
      .click(checkout.btnNewCardSubmit)
      .waitForElementPresent(checkout.btnPlaceOrder, getConfig().bigtimeout)
      .click(checkout.btnPlaceOrder)
-     .pause(getConfig().bigtimeout)
+     .waitForElementPresent(checkout.linkOrders, getConfig().bigtimeout)
      .assert.urlContains('store/thank-you');
   },
 
@@ -151,7 +177,7 @@ module.exports = {
      .click(checkout.btnNewCardSubmit)
      .waitForElementPresent(checkout.btnPlaceOrder, getConfig().bigtimeout)
      .click(checkout.btnPlaceOrder)
-     .pause(getConfig().bigtimeout)
+     .waitForElementPresent(checkout.linkOrders, getConfig().bigtimeout)
      .assert.urlContains('store/thank-you');
   },
 
@@ -174,7 +200,7 @@ module.exports = {
      .click(checkout.btnNewCardSubmit)
      .waitForElementPresent(checkout.btnPlaceOrder, getConfig().bigtimeout)
      .click(checkout.btnPlaceOrder)
-     .pause(getConfig().bigtimeout)
+     .waitForElementPresent(checkout.linkOrders, getConfig().bigtimeout)
      .assert.urlContains('store/thank-you');
   },
 
@@ -198,7 +224,7 @@ module.exports = {
      .click(checkout.btnNewCardSubmit)
      .waitForElementPresent(checkout.btnPlaceOrder, getConfig().bigtimeout)
      .click(checkout.btnPlaceOrder)
-     .pause(getConfig().bigtimeout)
+     .waitForElementPresent(checkout.linkOrders, getConfig().bigtimeout)
      .assert.urlContains('store/thank-you');
   },
 
@@ -216,7 +242,7 @@ module.exports = {
      .click(checkout.btnNewCardSubmit)
      .waitForElementPresent(checkout.btnPlaceOrder, getConfig().bigtimeout)
      .click(checkout.btnPlaceOrder)
-     .pause(getConfig().bigtimeout)
+     .waitForElementPresent(checkout.linkOrders, getConfig().bigtimeout)
      .assert.urlContains('store/thank-you');
   },
 
@@ -235,7 +261,7 @@ module.exports = {
      .click(checkout.btnNewCardSubmit)
      .waitForElementPresent(checkout.btnPlaceOrder, getConfig().bigtimeout)
      .click(checkout.btnPlaceOrder)
-     .pause(getConfig().bigtimeout)
+     .waitForElementPresent(checkout.linkOrders, getConfig().bigtimeout)
      .assert.urlContains('store/thank-you');
   },
 
@@ -262,7 +288,7 @@ module.exports = {
      .click(checkout.btnNewCardSubmit)
      .waitForElementPresent(checkout.btnPlaceOrder, getConfig().bigtimeout)
      .click(checkout.btnPlaceOrder)
-     .pause(getConfig().bigtimeout)
+     .waitForElementPresent(checkout.linkOrders, getConfig().bigtimeout)
      .assert.urlContains('store/thank-you');
   },
 
@@ -285,7 +311,7 @@ module.exports = {
      .click(checkout.btnNewCardSubmit)
      .waitForElementPresent(checkout.btnPlaceOrder, getConfig().bigtimeout)
      .click(checkout.btnPlaceOrder)
-     .pause(getConfig().bigtimeout)
+     .waitForElementPresent(checkout.linkOrders, getConfig().bigtimeout)
      .assert.urlContains('store/thank-you');
   },
 
@@ -309,9 +335,183 @@ module.exports = {
      .click(checkout.btnNewCardSubmit)
      .waitForElementPresent(checkout.btnPlaceOrder, getConfig().bigtimeout)
      .click(checkout.btnPlaceOrder)
-     .pause(getConfig().bigtimeout)
+     .waitForElementPresent(checkout.linkOrders, getConfig().bigtimeout)
      .assert.urlContains('store/thank-you');
-  }
+  },
+
+  "Checkout as a guest with picking up and billing address should pass when user increased product count": function(browser) {
+    browser
+     .click(checkout.btnAddToCart);
+
+     methods.moveToCart(browser);
+    
+    browser
+     .waitForElementPresent(checkout.btnCheckoutAsGuest, getConfig().timeout)
+     .click(checkout.btnCheckoutAsGuest);
+
+     methods.fillPickUpInfo(browser);
+     methods.fillPaymentMethodInfo(browser);
+     methods.fillBillingAddress(browser);
+
+     browser
+     .waitForElementPresent(checkout.btnNewCardSubmit, getConfig().timeout)
+     .click(checkout.btnNewCardSubmit)
+     .waitForElementPresent(checkout.btnChangeProduct, getConfig().bigtimeout)
+     .click(checkout.btnChangeProduct)
+     .waitForElementPresent(checkout.btnIncreaseProductCount, getConfig().bigtimeout)
+     .click(checkout.btnIncreaseProductCount)
+     .waitForElementPresent(checkout.btnCheckout, getConfig().timeout)
+     .click(checkout.btnCheckout)
+     .waitForElementPresent(checkout.btnPlaceOrder, getConfig().bigtimeout)
+     .click(checkout.btnPlaceOrder)
+     .waitForElementPresent(checkout.linkOrders, getConfig().bigtimeout)
+     .assert.urlContains('store/thank-you');
+  },
+
+  "Checkout as a guest with picking up and billing address should pass when user changed pickup for delivery": function(browser) {
+    browser
+     .click(checkout.btnAddToCart);
+
+     methods.moveToCart(browser);
+    
+    browser
+     .waitForElementPresent(checkout.btnCheckoutAsGuest, getConfig().timeout)
+     .click(checkout.btnCheckoutAsGuest);
+
+     methods.fillPickUpInfo(browser);
+     methods.fillPaymentMethodInfo(browser);
+     methods.fillBillingAddress(browser);
+
+     browser
+     .waitForElementPresent(checkout.btnNewCardSubmit, getConfig().timeout)
+     .click(checkout.btnNewCardSubmit)
+     .waitForElementPresent(checkout.btnChangeShippingAddress, getConfig().bigtimeout)
+     .click(checkout.btnChangeShippingAddress);
+
+     methods.fillDeliveryInfo(browser);
+
+     browser
+     .waitForElementPresent(checkout.btnPlaceOrder, getConfig().bigtimeout)
+     .click(checkout.btnPlaceOrder)
+     .waitForElementPresent(checkout.linkOrders, getConfig().bigtimeout)
+     .assert.urlContains('store/thank-you');
+  },
+
+  "Checkout as a guest with delivery and without billing address should pass when user changed delivery for pickup": function(browser) {
+    browser
+     .click(checkout.btnAddToCart);
+
+     methods.moveToCart(browser);
+    
+    browser
+     .waitForElementPresent(checkout.btnCheckoutAsGuest, getConfig().timeout)
+     .click(checkout.btnCheckoutAsGuest);
+
+     methods.fillDeliveryInfo(browser);
+     methods.fillPaymentMethodInfo(browser);
+
+     browser
+     .waitForElementPresent(checkout.btnNewCardSubmit, getConfig().timeout)
+     .click(checkout.btnNewCardSubmit)
+     .waitForElementPresent(checkout.btnChangeShippingAddress, getConfig().bigtimeout)
+     .click(checkout.btnChangeShippingAddress);
+
+     methods.fillPickUpInfo(browser);
+
+     browser
+     .waitForElementPresent(checkout.btnPlaceOrder, getConfig().bigtimeout)
+     .click(checkout.btnPlaceOrder)
+     .waitForElementPresent(checkout.linkOrders, getConfig().bigtimeout)
+     .assert.urlContains('store/thank-you');
+  },
+
+  "Checkout with account with delivery and with own primary card should pass": function(browser) {
+    browser
+     .click(checkout.btnAddToCart);
+
+    methods.moveToCart(browser); 
+    methods.signIn(browser);
+    methods.fillDeliveryInfo(browser);
+
+    browser
+     .waitForElementPresent(checkout.btnUsePrimaryCard, getConfig().bigtimeout)
+     .click(checkout.btnUsePrimaryCard)
+     .waitForElementPresent(checkout.btnPlaceOrder, getConfig().bigtimeout)
+     .click(checkout.btnPlaceOrder)
+     .waitForElementPresent(checkout.linkOrders, getConfig().bigtimeout)
+     .assert.urlContains('store/thank-you');
+  },
+
+  "Checkout with account with delivery and without billing address should pass when user changed credit card": function(browser) {
+    browser
+     .click(checkout.btnAddToCart);
+
+    methods.moveToCart(browser); 
+    methods.signIn(browser);
+    methods.fillDeliveryInfo(browser);
+    methods.fillPaymentMethodInfo(browser);
+
+    browser
+     .waitForElementPresent(checkout.btnNewCardSubmit, getConfig().timeout)
+     .click(checkout.btnNewCardSubmit)
+     .waitForElementPresent(checkout.btnChangePaymentMethod, getConfig().bigtimeout)
+     .click(checkout.btnChangePaymentMethod)
+     .waitForElementPresent(checkout.btnUsePrimaryCard, getConfig().bigtimeout)
+     .click(checkout.btnUsePrimaryCard)
+     .waitForElementPresent(checkout.btnPlaceOrder, getConfig().bigtimeout)
+     .click(checkout.btnPlaceOrder)
+     .waitForElementPresent(checkout.linkOrders, getConfig().bigtimeout)
+     .assert.urlContains('store/thank-you');
+  },
+
+  "Checkout as a guest with delivery and without billing address should pass when user changed shipping method": function(browser) {
+    browser
+     .click(checkout.btnAddToCart);
+
+     methods.moveToCart(browser);
+    
+    browser
+     .waitForElementPresent(checkout.btnCheckoutAsGuest, getConfig().timeout)
+     .click(checkout.btnCheckoutAsGuest);
+
+     methods.fillDeliveryInfo(browser);
+     methods.fillPaymentMethodInfo(browser);
+
+     browser
+     .waitForElementPresent(checkout.btnNewCardSubmit, getConfig().timeout)
+     .click(checkout.btnNewCardSubmit)
+     .waitForElementPresent(checkout.radioLocalPickup, getConfig().bigtimeout)
+     .click(checkout.radioLocalPickup)
+     .waitForElementPresent(checkout.btnPlaceOrder, getConfig().bigtimeout)
+     .click(checkout.btnPlaceOrder)
+     .waitForElementPresent(checkout.linkOrders, getConfig().bigtimeout)
+     .assert.urlContains('store/thank-you');
+  },
+
+  "Checkout with new account with pickup and without billing address should pass": function(browser) {
+    browser
+     .click(checkout.btnAddToCart);
+
+     methods.moveToCart(browser);
+    
+    browser
+     .waitForElementPresent(account.btnCreateAccount, getConfig().timeout)
+     .click(account.btnCreateAccount);
+
+     methods.createAccount(browser);
+     methods.fillDeliveryInfo(browser);
+     methods.fillPaymentMethodInfo(browser);
+
+     browser
+     .waitForElementPresent(checkout.btnNewCardSubmit, getConfig().timeout)
+     .click(checkout.btnNewCardSubmit)
+     .waitForElementPresent(checkout.btnPlaceOrder, getConfig().bigtimeout)
+     .click(checkout.btnPlaceOrder)
+     .waitForElementPresent(checkout.linkOrders, getConfig().bigtimeout)
+     .assert.urlContains('store/thank-you');
+  },
+
+
 
 
 };

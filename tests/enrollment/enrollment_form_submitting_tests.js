@@ -57,14 +57,14 @@ module.exports = {
      .click(enrollment.btnSubmitEnrollment)
      .waitForElementPresent(enrollment.reviewPageSubmit, getConfig().bigtimeout)
      .click(enrollment.reviewPageSubmit)
-     .pause(getConfig().bigtimeout)
+     .waitForElementPresent(enrollment.btnPrintInvoice, getConfig().bigtimeout)
      .assert.urlContains('enrollment/enrollmentcomplete');
   },
 
   "Enrollment shouldn't pass with unchecked terms and conditions": function(browser) {
     browser
      .click(enrollment.btnSubmitEnrollment)
-     .pause(getConfig().bigtimeout)
+     .pause(getConfig().timeout)
      .assert.urlContains('enrolleeinfo');
   },
 
@@ -89,7 +89,7 @@ module.exports = {
      .click(enrollment.btnSubmitEnrollment)
      .waitForElementPresent(enrollment.reviewPageSubmit, getConfig().bigtimeout)
      .click(enrollment.reviewPageSubmit)
-     .pause(getConfig().bigtimeout)
+     .waitForElementPresent(enrollment.btnPrintInvoice, getConfig().bigtimeout)
      .assert.urlContains('enrollment/enrollmentcomplete');
   },
 
@@ -106,8 +106,54 @@ module.exports = {
      .click(enrollment.btnSubmitEnrollment)
      .waitForElementPresent(enrollment.reviewPageSubmit, getConfig().bigtimeout)
      .click(enrollment.reviewPageSubmit)
-     .pause(getConfig().bigtimeout)
+     .waitForElementPresent(enrollment.btnPrintInvoice, getConfig().bigtimeout)
      .assert.urlContains('enrollment/enrollmentcomplete');
-  }
+  },
+
+  "Enrollment should pass with filled required fields when user changed shipping method": function(browser) {
+    browser
+     .click(enrollment.termsCheckbox)
+     .click(enrollment.btnSubmitEnrollment)
+     .waitForElementPresent(enrollment.radioPickup, getConfig().bigtimeout)
+     .click(enrollment.radioPickup)
+     .waitForElementPresent(enrollment.reviewPageSubmit, getConfig().bigtimeout)
+     .click(enrollment.reviewPageSubmit)
+     .waitForElementPresent(enrollment.btnPrintInvoice, getConfig().bigtimeout)
+     .assert.urlContains('enrollment/enrollmentcomplete');
+  },
+
+  "Enrollment should pass with filled required fields when user add new product": function(browser) {
+    browser
+     .click(enrollment.termsCheckbox)
+     .click(enrollment.btnSubmitEnrollment)
+     .waitForElementPresent(enrollment.btnChangePropucts, getConfig().bigtimeout)
+     .click(enrollment.btnChangePropucts)
+     .waitForElementPresent(enrollment.btnIncreaseProductCount, getConfig().bigtimeout)
+     .click(enrollment.btnIncreaseProductCount)
+     .waitForElementPresent(enrollment.btnOrderItemsContinue, getConfig().timeout)
+     .click(enrollment.btnOrderItemsContinue)
+     .waitForElementPresent(enrollment.reviewPageSubmit, getConfig().bigtimeout)
+     .click(enrollment.reviewPageSubmit)
+     .waitForElementPresent(enrollment.btnPrintInvoice, getConfig().bigtimeout)
+     .assert.urlContains('enrollment/enrollmentcomplete');
+  },
+
+  "Enrollment should pass with filled required fields when user changed pack": function(browser) {
+    browser
+     .click(enrollment.termsCheckbox)
+     .click(enrollment.btnSubmitEnrollment)
+     .waitForElementPresent(enrollment.btnChangePropucts, getConfig().bigtimeout)
+     .click(enrollment.btnChangePropucts)
+     .waitForElementPresent(enrollment.btnToPacks, getConfig().bigtimeout)
+     .click(enrollment.btnToPacks)
+     .waitForElementPresent(enrollment.btnAddUltimateKit, getConfig().bigtimeout)
+     .click(enrollment.btnAddUltimateKit)
+     .waitForElementPresent(enrollment.btnContinue, getConfig().bigtimeout)
+     .click(enrollment.btnContinue)
+     .waitForElementPresent(enrollment.reviewPageSubmit, getConfig().bigtimeout)
+     .click(enrollment.reviewPageSubmit)
+     .waitForElementPresent(enrollment.btnPrintInvoice, getConfig().bigtimeout)
+     .assert.urlContains('enrollment/enrollmentcomplete');
+  },
 
 };
