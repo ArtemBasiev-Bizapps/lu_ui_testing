@@ -103,8 +103,8 @@
         "btnChangePropucts": "#view-orderreview a[href='/corporate/enrollment/productlist']",
         "btnToPacks": "a[href='/corporate/enrollment/packs']",
         "btnIncreaseProductCount": "div[data-itemcode='LU3085'] a[data-role='incrementquantity']",
-        "btnOrderItemsContinue": "a[href='/corporate/enrollment/checkout']"
-
-
+        "btnOrderItemsContinue": "a[href='/corporate/enrollment/checkout']",
+        "btnChangeShippingAddress": "#shippingAddressContainer a[href='/corporate/enrollment/enrolleeinfo']",
+        "btnChangePaymentMethod": "#paymentMethodContainer a[href='/corporate/enrollment/enrolleeinfo']"
 
     }

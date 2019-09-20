@@ -37,6 +37,7 @@ module.exports = {
   "Shipping Address First Name field required validation message should be visible": function(browser) {
     browser
      .waitForElementPresent(enrollment.shippingAddressFirstName, getConfig().timeout)
+     .waitForElementVisible(enrollment.shippingAddressFirstName, getConfig().timeout)
      .clearValue(enrollment.shippingAddressFirstName)
      .click(enrollment.btnSubmitEnrollment)
      .moveToElement(enrollment.spanShippingFirstName, undefined, undefined)
@@ -46,6 +47,7 @@ module.exports = {
   "Shipping Address First Name field validation message should be hidden": function(browser) {
     browser
      .waitForElementPresent(enrollment.shippingAddressFirstName, getConfig().timeout)
+     .waitForElementVisible(enrollment.shippingAddressFirstName, getConfig().timeout)
      .clearValue(enrollment.shippingAddressFirstName)
      .setValue(enrollment.shippingAddressFirstName, 'test')
      .click(enrollment.btnSubmitEnrollment)
@@ -56,6 +58,7 @@ module.exports = {
   "Shipping Address Last Name field required validation message should be visible": function(browser) {
     browser
      .waitForElementPresent(enrollment.shippingAddressLastName, getConfig().timeout)
+     .waitForElementVisible(enrollment.shippingAddressLastName, getConfig().timeout)
      .clearValue(enrollment.shippingAddressLastName)
      .click(enrollment.btnSubmitEnrollment)
      .moveToElement(enrollment.spanShippingLastName, undefined, undefined)
@@ -65,6 +68,7 @@ module.exports = {
   "Shipping Address Last Name field validation message should be hidden": function(browser) {
     browser
      .waitForElementPresent(enrollment.shippingAddressLastName, getConfig().timeout)
+     .waitForElementVisible(enrollment.shippingAddressLastName, getConfig().timeout)
      .clearValue(enrollment.shippingAddressLastName)
      .setValue(enrollment.shippingAddressLastName, 'test')
      .click(enrollment.btnSubmitEnrollment)
@@ -75,6 +79,7 @@ module.exports = {
   "Shipping Address Email field required validation message should be visible": function(browser) {
     browser
      .waitForElementPresent(enrollment.shippingAddressEmail, getConfig().timeout)
+     .waitForElementVisible(enrollment.shippingAddressEmail, getConfig().timeout)
      .clearValue(enrollment.shippingAddressEmail)
      .click(enrollment.btnSubmitEnrollment)
      .moveToElement(enrollment.spanShippingEmail, undefined, undefined)
@@ -84,6 +89,7 @@ module.exports = {
   "Shipping Address Email field incorrect validation message should be visible": function(browser) {
     browser
      .waitForElementPresent(enrollment.shippingAddressEmail, getConfig().timeout)
+     .waitForElementVisible(enrollment.shippingAddressEmail, getConfig().timeout)
      .clearValue(enrollment.shippingAddressEmail)
      .setValue(enrollment.shippingAddressEmail, 'test')
      .click(enrollment.btnSubmitEnrollment)
@@ -94,6 +100,7 @@ module.exports = {
   "Shipping Address Email field validation message should be hidden": function(browser) {
     browser
      .waitForElementPresent(enrollment.shippingAddressEmail, getConfig().timeout)
+     .waitForElementVisible(enrollment.shippingAddressEmail, getConfig().timeout)
      .clearValue(enrollment.shippingAddressEmail)
      .setValue(enrollment.shippingAddressEmail, 'test@mail.com')
      .click(enrollment.btnSubmitEnrollment)
@@ -104,6 +111,7 @@ module.exports = {
   "Shipping Address Phone field required validation message should be visible": function(browser) {
     browser
      .waitForElementPresent(enrollment.shippingAddressPhone, getConfig().timeout)
+     .waitForElementVisible(enrollment.shippingAddressPhone, getConfig().timeout)
      .clearValue(enrollment.shippingAddressPhone)
      .click(enrollment.btnSubmitEnrollment)
      .moveToElement(enrollment.spanShippingPhone, undefined, undefined)
@@ -113,6 +121,7 @@ module.exports = {
   "Shipping Address Phone field incorrect validation message should be visible": function(browser) {
     browser
      .waitForElementPresent(enrollment.shippingAddressPhone, getConfig().timeout)
+     .waitForElementVisible(enrollment.shippingAddressPhone, getConfig().timeout)
      .clearValue(enrollment.shippingAddressPhone)
      .setValue(enrollment.shippingAddressPhone, '123456789012')
      .click(enrollment.btnSubmitEnrollment)
@@ -123,6 +132,7 @@ module.exports = {
   "Shipping Address Phone field validation message should be hidden": function(browser) {
     browser
      .waitForElementPresent(enrollment.shippingAddressPhone, getConfig().timeout)
+     .waitForElementVisible(enrollment.shippingAddressPhone, getConfig().timeout)
      .clearValue(enrollment.shippingAddressPhone)
      .setValue(enrollment.shippingAddressPhone, '1234567890')
      .click(enrollment.btnSubmitEnrollment)
@@ -133,6 +143,7 @@ module.exports = {
   "Shipping Address field required validation message should be visible": function(browser) {
     browser
      .waitForElementPresent(enrollment.shippingAddress, getConfig().timeout)
+     .waitForElementVisible(enrollment.shippingAddress, getConfig().timeout)
      .clearValue(enrollment.shippingAddress)
      .click(enrollment.btnSubmitEnrollment)
      .moveToElement(enrollment.spanShippingAddress, undefined, undefined)
@@ -142,6 +153,7 @@ module.exports = {
   "Shipping Address field validation message should be hidden": function(browser) {
     browser
      .waitForElementPresent(enrollment.shippingAddress, getConfig().timeout)
+     .waitForElementVisible(enrollment.shippingAddress, getConfig().timeout)
      .clearValue(enrollment.shippingAddress)
      .setValue(enrollment.shippingAddress, 'test')
      .click(enrollment.btnSubmitEnrollment)
@@ -152,6 +164,7 @@ module.exports = {
   "Shipping Address City field required validation message should be visible": function(browser) {
     browser
      .waitForElementPresent(enrollment.shippingAddressCity, getConfig().timeout)
+     .waitForElementVisible(enrollment.shippingAddressCity, getConfig().timeout)
      .clearValue(enrollment.shippingAddressCity)
      .click(enrollment.btnSubmitEnrollment)
      .moveToElement(enrollment.spanShippingCity, undefined, undefined)
@@ -161,6 +174,7 @@ module.exports = {
   "Shipping Address City field validation message should be hidden": function(browser) {
     browser
      .waitForElementPresent(enrollment.shippingAddressCity, getConfig().timeout)
+     .waitForElementVisible(enrollment.shippingAddressCity, getConfig().timeout)
      .clearValue(enrollment.shippingAddressCity)
      .setValue(enrollment.shippingAddressCity, 'test')
      .click(enrollment.btnSubmitEnrollment)
@@ -171,6 +185,7 @@ module.exports = {
   "Shipping Address Zipcode field required validation message should be visible": function(browser) {
     browser
      .waitForElementPresent(enrollment.shippingAddressZip, getConfig().timeout)
+     .waitForElementVisible(enrollment.shippingAddressZip, getConfig().timeout)
      .clearValue(enrollment.shippingAddressZip)
      .click(enrollment.btnSubmitEnrollment)
      .moveToElement(enrollment.spanShippingZip, undefined, undefined)
@@ -180,6 +195,7 @@ module.exports = {
   "Shipping Address Zipcode field validation message should be hidden": function(browser) {
     browser
      .waitForElementPresent(enrollment.shippingAddressZip, getConfig().timeout)
+     .waitForElementVisible(enrollment.shippingAddressZip, getConfig().timeout)
      .clearValue(enrollment.shippingAddressZip)
      .setValue(enrollment.shippingAddressZip, '11111')
      .click(enrollment.btnSubmitEnrollment)
@@ -190,6 +206,7 @@ module.exports = {
   "Shipping Address State field validation message should be hidden": function(browser) {
     browser
      .waitForElementPresent(enrollment.shippingAddressStateOption, getConfig().timeout)
+     .waitForElementVisible(enrollment.shippingAddressStateOption, getConfig().timeout)
      .click(enrollment.shippingAddressStateOption)
      .click(enrollment.btnSubmitEnrollment)
      .moveToElement(enrollment.spanShippingAddressState, undefined, undefined)

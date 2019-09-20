@@ -39,6 +39,7 @@ module.exports = {
   "Billing Address field required validation message should be visible": function(browser) {
     browser
      .waitForElementPresent(enrollment.billingAddress, getConfig().timeout)
+     .waitForElementVisible(enrollment.billingAddress, getConfig().timeout)
      .clearValue(enrollment.billingAddress)
      .click(enrollment.btnSubmitEnrollment)
      .moveToElement(enrollment.spanBillingAddress, undefined, undefined)
@@ -48,6 +49,7 @@ module.exports = {
   "Billing Address field validation message should be hidden": function(browser) {
     browser
      .waitForElementPresent(enrollment.billingAddress, getConfig().timeout)
+     .waitForElementVisible(enrollment.billingAddress, getConfig().timeout)
      .clearValue(enrollment.billingAddress)
      .setValue(enrollment.billingAddress, 'test')
      .click(enrollment.btnSubmitEnrollment)
@@ -58,6 +60,7 @@ module.exports = {
   "Billing Address City field required validation message should be visible": function(browser) {
     browser
      .waitForElementPresent(enrollment.billingAddressCity, getConfig().timeout)
+     .waitForElementVisible(enrollment.billingAddressCity, getConfig().timeout)
      .clearValue(enrollment.billingAddressCity)
      .click(enrollment.btnSubmitEnrollment)
      .moveToElement(enrollment.spanBillingAddressCity, undefined, undefined)
@@ -67,6 +70,7 @@ module.exports = {
   "Billing Address City field validation message should be hidden": function(browser) {
     browser
      .waitForElementPresent(enrollment.billingAddressCity, getConfig().timeout)
+     .waitForElementVisible(enrollment.billingAddressCity, getConfig().timeout)
      .clearValue(enrollment.billingAddressCity)
      .setValue(enrollment.billingAddressCity, 'test')
      .click(enrollment.btnSubmitEnrollment)
@@ -77,6 +81,7 @@ module.exports = {
   "Billing Address Zipcode field required validation message should be visible": function(browser) {
     browser
      .waitForElementPresent(enrollment.billingAddressZip, getConfig().timeout)
+     .waitForElementVisible(enrollment.billingAddressZip, getConfig().timeout)
      .clearValue(enrollment.billingAddressZip)
      .click(enrollment.btnSubmitEnrollment)
      .moveToElement(enrollment.spanBillingAddressZip, undefined, undefined)
@@ -86,6 +91,7 @@ module.exports = {
   "Billing Address Zipcode field validation message should be hidden": function(browser) {
     browser
      .waitForElementPresent(enrollment.billingAddressZip, getConfig().timeout)
+     .waitForElementVisible(enrollment.billingAddressZip, getConfig().timeout)
      .clearValue(enrollment.billingAddressZip)
      .setValue(enrollment.billingAddressZip, '11111')
      .click(enrollment.btnSubmitEnrollment)
@@ -96,6 +102,7 @@ module.exports = {
   "Billing Address State field validation message should be hidden": function(browser) {
     browser
      .waitForElementPresent(enrollment.billingAddressStateOption, getConfig().timeout)
+     .waitForElementVisible(enrollment.billingAddressStateOption, getConfig().timeout)
      .click(enrollment.billingAddressStateOption)
      .click(enrollment.btnSubmitEnrollment)
      .moveToElement(enrollment.spanBillingAddressState, undefined, undefined)
