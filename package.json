@@ -19,7 +19,7 @@
     "eslint-plugin-prettier": "^2.6.0",
     "geckodriver": "^1.8.1",
     "mochawesome": "^3.0.3",
-    "nightwatch": "^0.9.21",
+    "nightwatch": "^2.3.9",
     "phantomjs-prebuilt": "^2.1.15",
     "prettier": "^1.11.1",
     "selenium-server": "^3.5.2"
